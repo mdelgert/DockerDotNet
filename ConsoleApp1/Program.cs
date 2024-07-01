@@ -11,6 +11,7 @@ namespace ConsoleApp1
 
             while (max is -1 || counter < max)
             {
+                Console.WriteLine("Hello ARM!");
                 Console.WriteLine($"Counter: {++counter}");
                 await Task.Delay(TimeSpan.FromMilliseconds(100));
             }

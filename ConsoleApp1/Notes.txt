@@ -1,5 +1,6 @@
 ﻿https://medium.com/medialesson/building-arm64-docker-images-with-net-8-a-quick-solution-5491a94eb507
 https://gist.github.com/ptupitsyn/d9d7930c4f0d1840919ced5367bffc5e
+https://drpdishant.medium.com/multi-arch-images-with-docker-buildx-and-qemu-141e0b6161e7
 
 # Example build from powershell
 
@@ -14,10 +15,12 @@ docker stop test1
 docker run -it --rm dotnet-test1 3
 ```
 
+docker build --platform linux/arm64 -t dotnet-test1:arm64 .
+
 # Enable Docker Buildx to support multiple processors
 ```bash
-docker buildx create --name mybuilder --use
-docker buildx inspect --bootstrap
+docker buildx ls
+docker buildx version
 ```
 
 # Push multi arch image
@@ -27,4 +30,5 @@ docker buildx build --platform linux/arm64 -t mdelgert/dotnet-test1:latest --pus
 ```
 
 # Run the container
-docker run -it --rm mdelgert/dotnet
+docker run -it --rm mdelgert/dotnet-test1
+

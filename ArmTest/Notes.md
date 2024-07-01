@@ -1,6 +1,7 @@
 
 # Deploy .NET apps on ARM single-board computers
 https://learn.microsoft.com/en-us/dotnet/iot/deployment
+https://devblogs.microsoft.com/dotnet/this-arm64-performance-in-dotnet-8/
 
 ```bash
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel STS
